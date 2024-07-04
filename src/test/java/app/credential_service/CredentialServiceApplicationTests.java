@@ -1,4 +1,4 @@
-package com.example.credential_service;
+package app.credential_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

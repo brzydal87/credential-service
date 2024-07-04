@@ -12,7 +12,7 @@
     <artifactId>credential-service</artifactId>
     <name>Credential-service project</name>
     <description>Credential Service Spring Boot</description>
-    <version>0.0.7</version>
+    <version>0.0.8-SNAPSHOT</version>
 
     <properties>
         <java.version>21</java.version>

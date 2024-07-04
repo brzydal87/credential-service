@@ -1,4 +1,4 @@
-package com.example.credential_service;
+package app.credential_service;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
