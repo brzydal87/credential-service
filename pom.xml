@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>credential-service</artifactId>
-    <name>credential-service</name>
+    <name>Credential-service project</name>
     <description>Credential Service Spring Boot</description>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
 
     <properties>
         <java.version>21</java.version>
@@ -21,7 +21,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub brzydal87 Apache Maven Packages</name>
+            <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/brzydal87/credential-service</url>
         </repository>
     </distributionManagement>
