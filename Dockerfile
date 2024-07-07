@@ -8,7 +8,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the application
-RUN ./mvnw clean package
+RUN ./mvn clean package
 
 # Expose the application port
 EXPOSE 8080
