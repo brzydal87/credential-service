@@ -1,9 +1,17 @@
-FROM maven:3.8.5-openjdk-17 AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean install
+FROM openjdk:21-jdk-slim
 
-FROM openjdk:17
+# Set the working directory
 WORKDIR /app
-COPY --from=build /app/target/credential-service-1.0.jar /app/credential-service.jar
-ENTRYPOINT ["java", "-jar", "credential-service.jar"]
+
+# Copy the pom.xml and source code
+COPY pom.xml .
+COPY src ./src
+
+# Build the application
+RUN ./mvnw clean package
+
+# Expose the application port
+EXPOSE 8080
+
+# Run the application
+CMD ["java", "-jar", "target/credential-service.jar"]
