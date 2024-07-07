@@ -1,21 +1,18 @@
-# Use the appropriate base image with JDK 21
 FROM openjdk:21-jdk-slim
 
-# Install Maven
-RUN apt-get update && apt-get install -y maven
-
-# Set the working directory
 WORKDIR /app
 
-# Copy the pom.xml and source code
+COPY mvnw .
+COPY .mvn .mvn
 COPY pom.xml .
+
 COPY src ./src
 
-# Build the application
-RUN mvn clean package
+RUN chmod +x mvnw
 
-# Expose the application port
+RUN ./mvnw clean package
+
 EXPOSE 8080
 
-# Run the application
 CMD ["java", "-jar", "target/credential-service.jar"]
+
