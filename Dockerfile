@@ -1,4 +1,8 @@
+# Use the appropriate base image with JDK 21
 FROM openjdk:21-jdk-slim
+
+# Install Maven
+RUN apt-get update && apt-get install -y maven
 
 # Set the working directory
 WORKDIR /app
@@ -8,7 +12,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the application
-RUN ./mvn clean package
+RUN mvn clean package
 
 # Expose the application port
 EXPOSE 8080
